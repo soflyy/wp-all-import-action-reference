@@ -1,85 +1,36 @@
-#WP All Import & WP All Export API 
+#WP All Import + WP All Export Action Reference
 
-##WP-All-Import API
+##WP-All-Import
 
-### Before import
-#####pmxi_before_xml_import
-* Executed just before the import begins.
-[Details](all-import/pmxi_before_xml_import.php)
+### Before and after import
+* [pmxi_before_xml_import](all-import/pmxi_before_xml_import.php) - Executed just before the import begins.
+* [pmxi_after_xml_import](all-import/pmxi_after_xml_import.php) - Executed when the entire import completes.
 
-#####wpallimport_xml_row
-* Allows modification of each data record from the file before import.
-[Details](all-import/wpallimport_xml_row.php)
-
-### After import
-#####pmxi_saved_post
-* Invoked right after saving a post.
-[Details](all-import/pmxi_saved_post.php)
-
-#####pmxi_after_post_import
-* Invoked after saving a post (??)
-[Details](all-import/pmxi_after_post_import.php)
-
-#####pmxi_after_xml_import
-* Executed when the entire import completes.
-[Details](all-import/pmxi_after_xml_import.php)
+### Modifying post data during import
+* [wpallimport_xml_row](all-import/wpallimport_xml_row.php) - Allows modification of each data record from the file before import.
+* [pmxi_saved_post](all-import/pmxi_saved_post.php) - Invoked right after saving a post.
+* [pmxi_after_post_import](all-import/pmxi_after_post_import.php) - Invoked after saving a post (??)
+* [pmxi_article_data](all-import/pmxi_article_data.php) - Allows modifying the post body content before save.
 
 ### Custom fields (post meta)
-#####pmxi_custom_field
-* Custom field values can be modified *before* save using this hook.
-[Details](all-import/pmxi_custom_field.php)
- 
-#####pmxi_update_post_meta
-* Called right *after* a custom field is saved. Use this if you need access to meta_id.
-[Details](all-import/pmxi_update_post_meta.php)
+* [pmxi_custom_field](all-import/pmxi_custom_field.php) - Custom field values can be modified *before* save using this hook.
+* [pmxi_update_post_meta](all-import/pmxi_update_post_meta.php) - Called right *after* a custom field is saved. Use this if you need access to meta_id.
 
-### Choosing which records to import
-#####wp_all_import_is_post_to_create
-* Indicate whether the post is to be created.
-[Details](all-import/wp_all_import_is_post_to_create.php)
-
-#####wp_all_import_is_post_to_update
-* Indicate whether the post is to be updated.
-[Details](all-import/wp_all_import_is_post_to_update.php)
-
-#####wp_all_import_is_post_to_delete
-* Indicate whether the post is to be deleted.
-[Details](all-import/wp_all_import_is_post_to_delete.php)
-
-#####wp_all_import_specified_records
-* Allows specifing a list/range of records to import.
-[Details](all-import/wp_all_import_specified_records.php)
+### Choosing which records to import/update
+* [wp_all_import_is_post_to_create](all-import/wp_all_import_is_post_to_create.php) - Indicate whether the post is to be created.
+* [wp_all_import_is_post_to_update](all-import/wp_all_import_is_post_to_update.php) - Indicate whether the post is to be updated.
+* [wp_all_import_is_post_to_delete](all-import/wp_all_import_is_post_to_delete.php) - Indicate whether the post is to be deleted.
+* [wp_all_import_specified_records](all-import/wp_all_import_specified_records.php) - Allows specifing a list/range of records to import.
 
 ### Images and attachments
-#####pmxi_attachment_uploaded
-* Invoked right after an attachment was uploaded.
-[Details](all-import/pmxi_attachment_uploaded.php)
+* [pmxi_attachment_uploaded](all-import/pmxi_attachment_uploaded.php) - Invoked right after an attachment was uploaded.
+* [pmxi_gallery_image](all-import/pmxi_gallery_image.php) - Invoked right after an image was imported. Usefull if working with 3rd party plugins/themes that have a custom gallery format.
+* [wp_all_import_image_filename](all-import/wp_all_import_image_filename.php) - Allows customizing the names of imported images.
 
-#####pmxi_gallery_image
-* Invoked right after an image was imported. Usefull if working with 3rd party plugins/themes that have a custom gallery format.
-[Details](all-import/pmxi_gallery_image.php)
 
-#####wp_all_import_image_filename
-* Allows customizing the names of imported images.
-[Details](all-import/wp_all_import_image_filename.php)
-
-### Other
-#####pmxi_article_data
-* Allows modifying the post body content before save.
-[Details](all-import/pmxi_article_data.php)
-
----
-##WP-All-Export API
+##WP-All-Export
 
 ### Misc
-#####wp_all_export_csv_rows
-* Filter CSV rows to export.
-[Details](all-export/wp_all_export_csv_rows.php)
-
-#####wp_all_export_xml_rows
-* Filter XML rows to export.
-[Details](all-export/wp_all_export_xml_rows.php)
-
-#####wp_all_export_additional_data
-* Create additional fields for export.
-[Details](all-export/wp_all_export_additional_data.php)
+* [wp_all_export_csv_rows](all-export/wp_all_export_csv_rows.php) - Filter CSV rows to export.
+* [wp_all_export_xml_rows](all-export/wp_all_export_xml_rows.php) - Filter XML rows to export.
+* [wp_all_export_additional_data](all-export/wp_all_export_additional_data.php) - Create additional fields for export.
