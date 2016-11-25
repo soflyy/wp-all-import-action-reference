@@ -8,9 +8,9 @@
  * This is usually used when a plugin/theme uses a special custom field to store
  * the image gallery information
  *
- * @param $post_id The id of the post just created/updated
- * @param $att_id  The attachment id of the image
- * @param $file    The local file path to the full size image
+ * @param $post_id int    - The id of the post just created/updated
+ * @param $att_id  int    - The attachment id of the image
+ * @param $file    string - The local file path to the full size image
  */
 function my_gallery_image($post_id, $att_id, $file)
 {

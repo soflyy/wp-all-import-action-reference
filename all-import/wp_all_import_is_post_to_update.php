@@ -7,8 +7,8 @@
  * Return a boolean indicating if the existing record should be updated. For
  * new posts see "wp_all_import_is_post_to_create"
  *
- * @param $id
- * @param $xml_node An array of all the values for the current record
+ * @param $id       int                 - Post id
+ * @param $xml_node SimpleXMLElement    - An object holding values for the current record
  *
  * @return bool (true = update, false = skip)
  */

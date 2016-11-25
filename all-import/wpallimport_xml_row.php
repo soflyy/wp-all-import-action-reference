@@ -9,14 +9,14 @@
  * Note that this isn't just for XML imports. Data records from other formats (CSV, JSON,
  * Excel) are converted to SimpleXML objects internally for processing.
  *
- * @param $node simpleXML object. See http://php.net/manual/en/book.simplexml.php
+ * @param $xml_node SimpleXMLElement - An object holding values for the current record
  *
- * @return simpleXML object
+ * @return SimpleXMLElement
  */
-function wpai_xml_row($node)
+function wpai_xml_row($xml_node)
 {
     // Modify simpleXML object as needed
-    return $node;
+    return $xml_node;
 }
 
 add_filter('wpallimport_xml_row', 'wpai_xml_row', 10, 1);

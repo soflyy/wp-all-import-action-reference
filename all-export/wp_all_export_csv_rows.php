@@ -11,7 +11,7 @@
  *
  * @param $articles
  * @param $options
- * @param $export_id
+ * @param $export_id int - The export in progress
  *
  * @return array - the records to import
  */
@@ -21,9 +21,9 @@ function wp_all_export_csv_rows($articles, $options, $export_id)
     //
     // if ($export_id === 5) { ...
 
-    // $articles contains on array of records for importing.
+    // $articles contains on array of records for exporting.
     // Loop through the array and unset() any entries you don't
-    // want imported
+    // want exported
 
     return $articles; // Return the array of records to import
 }

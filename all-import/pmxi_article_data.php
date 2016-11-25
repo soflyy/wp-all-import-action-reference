@@ -8,9 +8,9 @@
  *
  * This filter works only when 'Choose which data to update' options is chosen in import settings.
  *
- * @param $articleData    New content is in $articleData['post_content']
- * @param $import         Import object
- * @param $post_to_update Current content is in $post_to_update->post_content 
+ * @param $articleData    array  - TODO: Verify ... New content is in $articleData['post_content']
+ * @param $import         object - TODO: Verify
+ * @param $post_to_update object - Current content is in $post_to_update->post_content
  *
  * @return mixed
  */

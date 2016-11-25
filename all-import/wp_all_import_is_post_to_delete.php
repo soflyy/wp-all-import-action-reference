@@ -6,9 +6,9 @@
  *
  * Return a boolean indicating if the existing record should be deleted.
  *
- * @param $is_post_to_delete A boolean indicating if the post is slated for deletion
- * @param $id
- * @param $import            Import object
+ * @param $is_post_to_delete boolean    - A boolean indicating if the post is slated for deletion
+ * @param $pid               int        - Post id
+ * @param $import            object     - ???
  *
  * @return bool (true = update, false = skip)
  */

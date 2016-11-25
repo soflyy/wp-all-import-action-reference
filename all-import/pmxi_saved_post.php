@@ -6,25 +6,28 @@
  *
  * Called after a post is created/updated by WP All Import.
  *
- * @param $post_id The id of the post just created/updated
- * @param $xml     SimpleXMLElement representing current record in file
+ * @param $post_id int               - The id of the post just created/updated
+ * @param $xml_node SimpleXMLElement - An object holding values for the current record
  *
  */
-function my_saved_post($post_id, $xml)
+function my_saved_post($post_id, $xml_node)
 {
     /*
-     * Here you can use standard WordPress functions like get_post_meta() and get_post()
-     * to retrieve the data, make your changes and then use update_post(),
-     * and/or update_post() to save them.
+     * Here you can use standard WordPress functions like get_post_meta() and get_post() to
+     * retrieve data, make changes and then save them with update_post() and/or update_post_meta()
      *
-     * Tip: If you need to pass data to this function you can use custom fields. For example,
-     * you could import a value to a field called "_temp" and then retrieve it here:
+     * There are two ways to access the data from the current record in your import file:
      *
-     *     $value = get_post_meta($post_id, "_temp");
+     * 1) Custom fields. For example, you could import a value to a custom field called "_temp" and
+     *  then retrieve it here. Since it's only temporary, you'd probably want to delete it immediately:
      *
-     * You probably want to delete it before exiting this function:
-     *
+     *     $my_value = get_post_meta($post_id, "_temp", true);
      *     delete_post_meta($post_id,"_temp");
+     *
+     * 2) The $xml param (a SimpleXMLElement object). This can be complex to work with if you're not
+     * used to iterators and/or xpath syntax. It's usually easiest to convert it a nested array using:
+     *
+     *     $record = json_decode(json_encode((array) $xml_node), 1);
      *
      */
 }
@@ -53,6 +56,9 @@ function custom_field_append($id)
 add_action('pmxi_saved_post', 'custom_field_append', 10, 1);
 
 
+
+
+
 /**
  * Conditionally update a custom field based on the value of a different field.
  *
@@ -69,3 +75,30 @@ function conditional_update($id)
 }
 
 add_action('pmxi_saved_post', 'conditional_update', 10, 1);
+
+
+//=========================================================================================================
+
+
+/**
+ * Append data to any field using a temporary custom field. Works with core post fields
+ * like post_title and custom fields like _my_custom_field
+ *
+ * TODO: There is no check to make sure the data isn't appended over and over on each run.
+ *
+ * http://imgur.com/a/q6Uxh
+ *
+ */
+add_action('pmxi_saved_post', function ($id) {
+    $values = get_post_meta($id, '_append_to', true);
+	if (!is_array($values)) return;
+	$post = get_post($id);
+	foreach ($values as $key => $value) {
+		if (strpos($key, "post_") === 0) $post->{$key} .= $value;
+        else update_post_meta($id, $key, get_post_meta($id, $key, true) . $value);
+	}
+	wp_update_post($post);
+    delete_post_meta($id, '_append_to');
+}, 10, 1);
+
+
