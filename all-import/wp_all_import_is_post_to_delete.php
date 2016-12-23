@@ -6,13 +6,12 @@
  *
  * Return a boolean indicating if the existing record should be deleted.
  *
- * @param $is_post_to_delete boolean    - A boolean indicating if the post is slated for deletion
- * @param $pid               int        - Post id
- * @param $import            object     - ???
+ * @param $is_post_to_delete boolean    - An integer indicating if the post is slated for deletion (1=true, 0=false)
+ * @param $id                int        - Post id
  *
- * @return bool (true = update, false = skip)
+ * @return bool (true = delete, false = skip)
  */
-function my_is_post_to_delete($is_post_to_delete, $pid, $import)
+function my_is_post_to_delete($is_post_to_delete, $id)
 {
     // your code here
     return true;

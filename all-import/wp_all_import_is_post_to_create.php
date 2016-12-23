@@ -5,15 +5,15 @@
  * ========================================
  *
  * Return a boolean indicating if the record should be imported. Note that
- * this is only for new posts. See "wp_all_import_is_post_to_update"
- * filter for updating existing posts
+ * this is only for new posts. The "wp_all_import_is_post_to_update"
+ * filter is for updating existing posts
  *
- * @param $xml_node SimpleXMLElement - An object holding values for the current record
- * **** TODO: Not a simpleXMLElement, actually an array!
+ * @param $data     array        - An array holding values for the current record. If importing from
+ *                                 XML, attributes can be accessed as SimpleXMLElement objects.
  *
  * @return bool (true = create, false = skip)
  */
-function my_is_post_to_create($xml_node)
+function my_is_post_to_create($data)
 {
     // your code here
     return true;

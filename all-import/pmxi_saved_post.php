@@ -77,8 +77,22 @@ function conditional_update($id)
 add_action('pmxi_saved_post', 'conditional_update', 10, 1);
 
 
-//=========================================================================================================
+/**
+ * Conditionally delete a custom field based on the value of a different field.
+ *
+ * @param $id
+ */
+function conditional_delete($id)
+{
+    $check = get_post_meta($id, '_my_delete_check', true);
+    if ($check === 'yes') {
+        delete_post_meta($id, '_my_field');
+    }
+}
 
+add_action('pmxi_saved_post', 'conditional_delete', 10, 1);
+
+//=========================================================================================================
 
 /**
  * Append data to any field using a temporary custom field. Works with core post fields
