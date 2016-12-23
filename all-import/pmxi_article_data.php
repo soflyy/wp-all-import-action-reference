@@ -23,8 +23,3 @@ function my_pmxi_article_data($articleData, $import, $post_to_update)
 }
 
 add_filter('pmxi_article_data', 'my_pmxi_article_data', 10, 3);
-
-
-// ----------------------------
-// Example uses below
-// ----------------------------

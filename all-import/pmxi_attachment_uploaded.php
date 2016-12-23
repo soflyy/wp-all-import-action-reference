@@ -21,10 +21,3 @@ add_action('pmxi_attachment_uploaded', 'my_attachment_uploaded', 10, 3);
 
 
 
-// ----------------------------
-// Example uses below
-// ----------------------------
-
-// To do.
-
-

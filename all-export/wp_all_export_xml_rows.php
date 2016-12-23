@@ -28,7 +28,3 @@ function my_wp_all_export_xml_rows($is_export_record, $record, $export_options, 
 
 add_filter('wp_all_export_xml_rows', 'my_wp_all_export_xml_rows', 10, 4);
 
-
-// ----------------------------
-// Example uses below
-// ----------------------------
