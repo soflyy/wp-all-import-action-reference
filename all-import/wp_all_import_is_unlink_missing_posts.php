@@ -14,5 +14,5 @@
 add_filter( 'wp_all_import_is_unlink_missing_posts', 'wpai_wp_all_import_is_unlink_missing_posts', 10, 3 );
 
 function wpai_wp_all_import_is_unlink_missing_posts( $is_unlink_missing, $import_id, $post_id ) {
-	return true;
+	// Return "true" to unlink the post.
 }
