@@ -3,7 +3,8 @@
  * ======================================
  * Filter: wp_all_export_config_options
  * ======================================
- * Create additional fields for export.
+ *
+ * Set export options.
  *
  * @param $options array - export configuration options.
  *
