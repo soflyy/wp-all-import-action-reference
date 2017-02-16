@@ -36,7 +36,7 @@ add_filter('wp_all_export_csv_rows', 'wp_all_export_csv_rows', 10, 2);
 // ----------------------------
 
 /**
- * Import based on some criteria. In this case pricing.
+ * Export based on some criteria. In this case pricing.
  *
  */
 function my_export_csv_rows($articles, $options, $export_id)
