@@ -36,4 +36,5 @@
 * [wp_all_export_additional_data](all-export/wp_all_export_additional_data.php) - Create additional fields for export.
 * [wp_all_export_export_file_name](all-export/wp_all_export_export_file_name.php) - Specify the export file name.
 * [pmxe_after_export](all-export/pmxe_after_export.php) - Perform some action after the export is complete.
+* [wp_all_export_implode_delimiter](all-export/wp_all_export_implode_delimiter.php) - Modify the implode delimiter for export fields.
 
