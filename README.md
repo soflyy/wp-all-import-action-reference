@@ -11,6 +11,7 @@
 * [pmxi_saved_post](all-import/pmxi_saved_post.php) - Invoked right after saving a post.
 * [pmxi_after_post_import](all-import/pmxi_after_post_import.php) - Invoked after saving a post (??)
 * [pmxi_article_data](all-import/pmxi_article_data.php) - Allows modifying the post body content before save.
+* [pmxi_delete_post](all-import/pmxi_delete_post.php) - Triggered before posts are deleted.
 
 ### Custom fields (post meta)
 * [pmxi_custom_field](all-import/pmxi_custom_field.php) - Custom field values can be modified *before* save using this hook.
