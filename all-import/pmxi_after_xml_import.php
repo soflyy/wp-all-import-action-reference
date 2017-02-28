@@ -13,7 +13,7 @@
 function after_xml_import($import_id)
 {
     // Unless you want this code to execute for every import, check the import id
-    // if ($import_id === 5) { ... }
+    // if ($import_id == 5) { ... }
 }
 
 add_action('pmxi_after_xml_import', 'after_xml_import', 10, 1);
