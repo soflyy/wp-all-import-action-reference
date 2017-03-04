@@ -4,12 +4,10 @@
  * Filter: wp_all_export_csv_rows
  * ==================================
  *
- * Filters CSV rows to export.
+ * Filters the records to export.
+ * This is for CSV formatted exports only. See 'wp_all_export_xml_rows' for filtering XML exports.
  *
- * See 'wp_all_export_xml_rows' for XML data. (which get passed a single
- * record instead of an array of records)
- *
- * @param $articles
+ * @param $articles - An array of records for exporting. Each article is keyed by the column header name for that field.
  * @param $options
  * @param $export_id int - The export in progress
  *
@@ -18,12 +16,12 @@
 function wp_all_export_csv_rows($articles, $options, $export_id)
 {
     // Unless you want this code to execute for every export, be sure to check the export id
-    //
     // if ($export_id === 5) { ...
 
-    // $articles contains on array of records for exporting.
-    // Loop through the array and unset() any entries you don't
-    // want exported
+    // Loop through the array and unset() any entries you don't want exported
+    // foreach ($articles as $key => $article) {
+    //    if ($article["Title"] == "Something") unset($articles[$key]);
+    // }
 
     return $articles; // Return the array of records to import
 }
