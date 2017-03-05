@@ -50,4 +50,23 @@ function my_export_csv_rows($articles, $options, $export_id)
     return $articles;
 }
 
+/**
+ * Add custom line to export file.
+ *
+ */
 add_filter('wp_all_export_csv_rows', 'my_export_csv_rows', 10, 2);
+
+add_filter('wp_all_export_csv_rows', 'wpai_wp_all_export_csv_rows', 10, 3);
+function wpai_wp_all_export_csv_rows( $articles, $options, $export_id ) {
+        $new_article = array();
+        if ( ! empty($articles)) {
+                foreach( $articles as $article ) {
+                        foreach ($article as $header => $value ) {
+                                $new_article[$header] = 'NEW ' . $value;
+                                // here we can switch $header to determine Order ID
+                        }
+                }
+                $articles[] = $new_article;
+        }
+        return $articles;
+}
