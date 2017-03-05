@@ -16,6 +16,7 @@
 * [pmxi_article_data](all-import/pmxi_article_data.php) - Allows modifying the post body content before save.
 * [pmxi_single_category](all-import/pmxi_single_category.php) - Can be used to determine which taxonomies are attached to post.
 * [wp_all_import_set_post_terms](all-import/wp_all_import_set_post_terms.php) - Called when setting the post taxonomy terms.
+* [pmxi_delete_post](all-import/pmxi_delete_post.php) - Triggered before posts are deleted.
 
 ### Custom fields (post meta)
 * [pmxi_custom_field](all-import/pmxi_custom_field.php) - Custom field values can be modified *before* save using this hook.
