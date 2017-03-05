@@ -57,4 +57,3 @@
 * [wp_all_export_after_csv_line](all-export/wp_all_export_after_csv_line.php) - Add custom line ending.
 * [wp_all_export_config_options](all-export/wp_all_export_config_options.php) - Change WP All Export configuration options.
 * [wp_all_export_csv_headers](all-export/wp_all_export_csv_headers.php) - Modify the header/columns.
-* [wp_all_export_zapier_response](all-export/wp_all_export_zapier_response.php) - Modify response to Zapier.

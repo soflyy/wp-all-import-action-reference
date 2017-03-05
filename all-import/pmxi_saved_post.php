@@ -94,6 +94,20 @@ add_action('pmxi_saved_post', 'conditional_delete', 10, 1);
 
 //=========================================================================================================
 
+/*
+ * In some cases it's desirable to have the featured image also appear in the product
+ * gallery in WooCommerce. This function will prepend the featured image to the gallery.
+ */
+function copy_featured_img_to_gallery($post_id)
+{
+	$gallery = explode(",",get_post_meta($post_id, "_product_image_gallery", true));
+	array_unshift($gallery, get_post_thumbnail_id( $post_id ));
+	$gallery = array_unique($gallery);
+	update_post_meta($post_id, "_product_image_gallery", implode(",",$gallery));
+}
+
+add_action('pmxi_saved_post', 'copy_featured_img_to_gallery', 10, 2);
+
 /**
  * Append data to any field using a temporary custom field. Works with core post fields
  * like post_title and custom fields like _my_custom_field

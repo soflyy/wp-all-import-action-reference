@@ -5,8 +5,7 @@
  * ==================================
  * Filter a single XML record for conditional export.
  *
- * See 'wp_all_export_csv_rows' for CSV data (which get passed an array of
- * records instead of a single record)
+ * This is for XML formatted exports only. See 'wp_all_export_csv_rows' for CSV exports.
  *
  * @param $is_export_record
  * @param $record
