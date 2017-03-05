@@ -14,9 +14,9 @@
 * [pmxi_saved_post](all-import/pmxi_saved_post.php) - Invoked right after saving a post.
 * [pmxi_after_post_import](all-import/pmxi_after_post_import.php) - Invoked after saving a post (??)
 * [pmxi_article_data](all-import/pmxi_article_data.php) - Allows modifying the post body content before save.
+* [pmxi_delete_post](all-import/pmxi_delete_post.php) - Triggered before posts are deleted.
 * [pmxi_single_category](all-import/pmxi_single_category.php) - Can be used to determine which taxonomies are attached to post.
 * [wp_all_import_set_post_terms](all-import/wp_all_import_set_post_terms.php) - Called when setting the post taxonomy terms.
-* [pmxi_delete_post](all-import/pmxi_delete_post.php) - Triggered before posts are deleted.
 
 ### Custom fields (post meta)
 * [pmxi_custom_field](all-import/pmxi_custom_field.php) - Custom field values can be modified *before* save using this hook.
@@ -51,6 +51,7 @@
 * [wp_all_export_additional_data](all-export/wp_all_export_additional_data.php) - Create additional fields for export.
 * [wp_all_export_export_file_name](all-export/wp_all_export_export_file_name.php) - Specify the export file name.
 * [pmxe_after_export](all-export/pmxe_after_export.php) - Perform some action after the export is complete.
+* [wp_all_export_implode_delimiter](all-export/wp_all_export_implode_delimiter.php) - Modify the implode delimiter for export fields.
 * [pmxe_woo_field](all-export/pmxe_woo_field.php) - Modify WooCommerce field data.
 * [wp_all_export_is_csv_headers_enabled](all-export/wp_all_export_is_csv_headers_enabled.php) - Enable/disable headers.
 * [wp_all_export_after_csv_line](all-export/wp_all_export_after_csv_line.php) - Add custom line ending.
