@@ -31,11 +31,21 @@
 
 ##WP-All-Export
 
-### Misc
+### Modify exported data rows
 * [wp_all_export_csv_rows](all-export/wp_all_export_csv_rows.php) - Filter CSV rows to export.
 * [wp_all_export_xml_rows](all-export/wp_all_export_xml_rows.php) - Filter XML rows to export.
-* [wp_all_export_additional_data](all-export/wp_all_export_additional_data.php) - Create additional fields for export.
-* [wp_all_export_export_file_name](all-export/wp_all_export_export_file_name.php) - Specify the export file name.
-* [pmxe_after_export](all-export/pmxe_after_export.php) - Perform some action after the export is complete.
+* [wp_all_export_after_csv_line](all-export/wp_all_export_after_csv_line.php) - Filters CSV lines.
+* [pmxe_woo_field](all-export/pmxe_woo_field.php) - Filters WooCommerce fields.
 * [wp_all_export_implode_delimiter](all-export/wp_all_export_implode_delimiter.php) - Modify the implode delimiter for export fields.
+
+### Modify name or format of export file
+* [wp_all_export_additional_data](all-export/wp_all_export_additional_data.php) - Create additional fields for export.
+* [wp_all_export_is_csv_headers_enabled](all-export/wp_all_export_is_csv_headers_enabled.php) - Can be used to completely remove the CSV header.
+* [wp_all_export_export_file_name](all-export/wp_all_export_export_file_name.php) - Specify the export file name.
+* [wp_all_export_csv_headers](all-export/wp_all_export_csv_headers.php) - Manipulate export file headers.
+
+### Misc
+* [wp_all_export_config_options](all-export/wp_all_export_config_options.php) - Set export options
+* [pmxe_after_export](all-export/pmxe_after_export.php) - Perform some action after the export is complete.
+* [wp_all_export_zapier_response](all-export/wp_all_export_zapier_response.php) - 
 
