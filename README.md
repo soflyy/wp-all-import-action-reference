@@ -1,6 +1,6 @@
-#WP All Import/Export Action Reference
+# WP All Import/Export Action Reference
 
-##WP-All-Import
+## WP-All-Import
 
 ### Before and after import
 * [pmxi_before_xml_import](all-import/pmxi_before_xml_import.php) - Executed just before the import begins.
@@ -40,7 +40,7 @@
 * [wp_all_import_image_filename](all-import/wp_all_import_image_filename.php) - Allows customizing the names of imported images.
 
 
-##WP-All-Export
+## WP-All-Export
 
 ### Modify exported data rows
 * [wp_all_export_csv_rows](all-export/wp_all_export_csv_rows.php) - Filter CSV rows to export.
