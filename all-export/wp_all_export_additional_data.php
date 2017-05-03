@@ -3,7 +3,8 @@
  * ======================================
  * Filter: wp_all_export_additional_data
  * ======================================
- * Create additional fields for export.
+ * Create additional fields for export. 
+ * NOTE: Works with XML exports only, not CSV*
  *
  * @param $add_data array - any additional data to export to this array
  * @param $options ??
@@ -24,7 +25,7 @@ add_filter('wp_all_export_additional_data', 'wpae_additional_data', 10, 2);
 
 /**
  * Example: adds a "created_at" element to the export
- *
+ * Example result: http://d.pr/i/BYOAs/4LARjuPi
  */
 function wpae_additional_data_field($add_data, $options)
 {
