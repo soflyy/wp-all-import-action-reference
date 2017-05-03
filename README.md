@@ -50,7 +50,7 @@
 * [wp_all_export_implode_delimiter](all-export/wp_all_export_implode_delimiter.php) - Modify the implode delimiter for export fields.
 
 ### Modify name or format of export file
-* [wp_all_export_additional_data](all-export/wp_all_export_additional_data.php) - Create additional fields for export.
+* [wp_all_export_additional_data](all-export/wp_all_export_additional_data.php) - Create additional XML nodes for export
 * [wp_all_export_is_csv_headers_enabled](all-export/wp_all_export_is_csv_headers_enabled.php) - Can be used to completely remove the CSV header.
 * [wp_all_export_export_file_name](all-export/wp_all_export_export_file_name.php) - Specify the export file name.
 * [wp_all_export_csv_headers](all-export/wp_all_export_csv_headers.php) - Manipulate export file headers.
