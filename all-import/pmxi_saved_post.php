@@ -114,19 +114,20 @@ add_action('pmxi_saved_post', 'copy_featured_img_to_gallery', 10, 2);
  *
  * TODO: There is no check to make sure the data isn't appended over and over on each run.
  *
- * http://imgur.com/a/q6Uxh
+ * See - http://imgur.com/a/q6Uxh
  *
  */
-add_action('pmxi_saved_post', function ($id) {
+function append_example($id) {
     $values = get_post_meta($id, '_append_to', true);
-	if (!is_array($values)) return;
-	$post = get_post($id);
-	foreach ($values as $key => $value) {
-		if (strpos($key, "post_") === 0) $post->{$key} .= $value;
+    if (!is_array($values)) return;
+    $post = get_post($id);
+    foreach ($values as $key => $value) {
+	if (strpos($key, "post_") === 0) $post->{$key} .= $value;
         else update_post_meta($id, $key, get_post_meta($id, $key, true) . $value);
-	}
-	wp_update_post($post);
+    }
+    wp_update_post($post);
     delete_post_meta($id, '_append_to');
-}, 10, 1);
+}
 
+add_action('pmxi_saved_post', 'append_example', 10, 1);
 
