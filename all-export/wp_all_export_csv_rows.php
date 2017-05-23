@@ -26,7 +26,7 @@ function wp_all_export_csv_rows($articles, $options, $export_id)
     return $articles; // Return the array of records to import
 }
 
-add_filter('wp_all_export_csv_rows', 'wp_all_export_csv_rows', 10, 2);
+add_filter('wp_all_export_csv_rows', 'wp_all_export_csv_rows', 10, 3);
 
 
 // ----------------------------
@@ -50,4 +50,4 @@ function my_export_csv_rows($articles, $options, $export_id)
     return $articles;
 }
 
-add_filter('wp_all_export_csv_rows', 'my_export_csv_rows', 10, 2);
+add_filter('wp_all_export_csv_rows', 'my_export_csv_rows', 10, 3);
