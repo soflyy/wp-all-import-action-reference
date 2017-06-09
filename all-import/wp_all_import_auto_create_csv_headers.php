@@ -6,6 +6,11 @@
  *
  * Auto generate headers, or use header in file.
  *
+ * Note: Most of our API hooks can used directly in the WP All Import function editor 
+ *   (found on the settings page). However, WP All Import doesn't load that code when creating 
+ *   a brand new import, only when running it. For that reason, this code needs to be added 
+ *   elsewhere. For example, in your theme's functions.php file or using a plugin like "Code Snippets".
+ *
  * @param $create_headers
  * @param $import_id
  *
