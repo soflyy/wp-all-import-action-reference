@@ -27,11 +27,10 @@ function wpai_wp_all_import_auto_create_csv_headers( $create_headers, $import_id
 // ----------------------------
 
 /**
- * Example: Auto generate header
- *
+ * See note above about where to place this code snippet.
  */
 add_filter( 'wp_all_import_auto_create_csv_headers', 'wpai_wp_all_import_auto_create_csv_headers', 10, 2 ); 
 
 function wpai_wp_all_import_auto_create_csv_headers( $create_headers, $import_id ){ 
-    return true; 
+    return true; // or return `false` instead to use headers from file
 }
