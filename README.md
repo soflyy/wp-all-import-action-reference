@@ -42,6 +42,9 @@
 
 ## WP-All-Export
 
+### Modifying post data during export
+* [pmxe_exported_post](all-export/pmxe_exported_post.php) - Invoked right after exporting a post.
+
 ### Modify exported data rows
 * [wp_all_export_csv_rows](all-export/wp_all_export_csv_rows.php) - Filter CSV rows to export.
 * [wp_all_export_xml_rows](all-export/wp_all_export_xml_rows.php) - Filter XML rows to export.
