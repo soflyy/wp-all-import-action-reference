@@ -9,7 +9,7 @@
  * Available in WP All Export Pro v1.4.7-Beta-1.35 and higher
  * 
  * @param $is_export_record  bool
- * @param $product_id - the ID of the product
+ * @param $product_id  int - the ID of the product
  * @param $export_options
  * @param $export_id  int - The export in progress
  * @return bool (true = export item, false = skip item)
