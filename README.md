@@ -47,7 +47,6 @@
 
 ### Modify exported data rows
 * [wp_all_export_csv_rows](all-export/wp_all_export_csv_rows.php) - Filter CSV rows to export.
-* [wp_all_export_csv_rows](all-export/wp_all_export_csv_rows.php) - Filter CSV rows to export.
 * [wp_all_export_xml_rows](all-export/wp_all_export_xml_rows.php) - Filter XML rows to export.
 * [wp_all_export_after_csv_line](all-export/wp_all_export_after_csv_line.php) - Filters CSV lines.
 * [pmxe_woo_field](all-export/pmxe_woo_field.php) - Filters WooCommerce fields.
