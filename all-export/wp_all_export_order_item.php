@@ -14,7 +14,7 @@
  * @param $export_id  int - The export in progress
  * @return bool (true = export item, false = skip item)
  */
- function filter_my_order_items ($is_export_record, $product_id, $export_options, $export_id) {
+function filter_my_order_items ($is_export_record, $product_id, $export_options, $export_id) {
 	// Unless you want this to execute for every export you should check the id here:
 	// if ($export_id === 5) {
 
