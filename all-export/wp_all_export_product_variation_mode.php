@@ -5,6 +5,7 @@
  * ==============================================
  * Choose whether to export parent products or just variations.
  *
+ * Available in WP All Export Pro v1.4.7-Beta-1.35 and higher
  *
  * @param $exportVariationMode
  * @param $exportID  int
