@@ -107,7 +107,7 @@ add_action('pmxi_saved_post', 'copy_featured_img_to_gallery', 10, 2);
 
 /*
  * Need to import data to custom database tables along with your imported items? This should give
- * you a general idea how, but would require modification depending on your table structure and exact needs.
+ * you a general idea how, but would require modification for your exact needs.
  *
  * This is provided with the hope it will be useful but importing to custom tables is *not* officially supported.
  * This is very advanced usage. It's only advised for developers with experience directly reading/writing MySQL tables.
