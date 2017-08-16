@@ -56,9 +56,6 @@ function custom_field_append($id)
 add_action('pmxi_saved_post', 'custom_field_append', 10, 1);
 
 
-
-
-
 /**
  * Conditionally update a custom field based on the value of a different field.
  *
@@ -92,7 +89,6 @@ function conditional_delete($id)
 
 add_action('pmxi_saved_post', 'conditional_delete', 10, 1);
 
-//=========================================================================================================
 
 /*
  * In some cases it's desirable to have the featured image also appear in the product
@@ -108,26 +104,21 @@ function copy_featured_img_to_gallery($post_id)
 
 add_action('pmxi_saved_post', 'copy_featured_img_to_gallery', 10, 2);
 
-/**
- * Append data to any field using a temporary custom field. Works with core post fields
- * like post_title and custom fields like _my_custom_field
+
+/*
+ * Need to import data to custom database tables along with your imported items? This should give
+ * you a general idea how, but would require modification depending on your table structure and exact needs.
  *
- * TODO: There is no check to make sure the data isn't appended over and over on each run.
- *
- * See - http://imgur.com/a/q6Uxh
- *
+ * This is provided with the hope it will be useful but importing to custom tables is *not* officially supported.
+ * This is very advanced usage. It's only advised for developers with experience directly reading/writing MySQL tables.
  */
-function append_example($id) {
-    $values = get_post_meta($id, '_append_to', true);
-    if (!is_array($values)) return;
-    $post = get_post($id);
-    foreach ($values as $key => $value) {
-	if (strpos($key, "post_") === 0) $post->{$key} .= $value;
-        else update_post_meta($id, $key, get_post_meta($id, $key, true) . $value);
-    }
-    wp_update_post($post);
-    delete_post_meta($id, '_append_to');
+function custom_database_table_query($id) 
+{
+    global $wpdb; 
+    $value = get_post_meta($id, '_your_temp_field', true);
+    $table_name = $wpdb->prefix . "your_table_name";
+    $wpdb->insert($table_name, array('post_id' => $id, 'column_name' => $value), array('%s','%s'));
+    delete_post_meta($id, '_your_temp_field');
 }
 
-add_action('pmxi_saved_post', 'append_example', 10, 1);
 
