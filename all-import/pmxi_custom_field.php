@@ -9,12 +9,13 @@
  * @param $value              string - The new custom field value from the data file
  * @param $post_id            int    - The id of the post
  * @param $key                string - The custom field key
- * @param $existing_meta_keys mixed  - ??? TODO: Document
+ * @param $existing_meta      array  - An array of all the existing meta values. 
+ *                                     Use $existing_meta[$key][0] to read the current value for $key.
  * @param $import_id          int    - The id of the import
  *
  * @return mixed
  */
-function my_custom_field($value, $post_id, $key, $existing_meta_keys, $import_id)
+function my_custom_field($value, $post_id, $key, $existing_meta, $import_id)
 {
     // Unless you want this code to execute for every import, check the import id
     // if ($import_id === 5) { ... }
@@ -32,8 +33,6 @@ add_filter('pmxi_custom_field', 'my_custom_field', 10, 5);
 
 /**
  * Only update the custom field if the new value is not empty
- *
- *
  */
 function keep_existing_if_empty($value, $post_id, $key, $existing_meta, $import_id)
 {
@@ -48,3 +47,18 @@ function keep_existing_if_empty($value, $post_id, $key, $existing_meta, $import_
 add_filter('pmxi_custom_field', 'keep_existing_if_empty', 10, 5);
 
 
+/**
+ * Only update the custom field if it's currently empty
+ */
+function update_existing_if_empty($value, $post_id, $key, $existing_meta, $import_id) {
+    if ($import_id == 5) { // ENTER THE IMPORT ID HERE
+        if ($key == 'ENTER-YOUR-CUSTOM-FIELD-NAME-HERE') {
+            if (!isset($existing_meta[$key][0]) || empty($existing_meta[$key][0])) {
+                $value = $existing_meta[$key][0];
+            }
+        }
+    }
+    return $value;
+}
+
+add_filter('pmxi_custom_field', 'update_existing_if_empty', 10, 5);
