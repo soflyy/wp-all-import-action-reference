@@ -36,21 +36,24 @@ add_filter('pmxi_custom_field', 'my_custom_field', 10, 5);
  */
 function keep_existing_if_empty($value, $post_id, $key, $existing_meta, $import_id)
 {
-    if ($key == 'ENTER-YOUR-CUSTOM-FIELD-NAME-HERE') {
-        if (empty($value)) {
-            $value = isset($existing_meta[$key][0]) ? $existing_meta[$key][0] : $value;
+    if ($import_id == 5) { // ENTER THE IMPORT ID HERE
+        if ($key == 'ENTER-YOUR-CUSTOM-FIELD-NAME-HERE') {
+            if (empty($value)) {
+                $value = isset($existing_meta[$key][0]) ? $existing_meta[$key][0] : $value;
+            }
         }
     }
     return $value;
 }
-
 add_filter('pmxi_custom_field', 'keep_existing_if_empty', 10, 5);
+
 
 
 /**
  * Only update the custom field if it's currently empty
  */
-function update_existing_if_empty($value, $post_id, $key, $existing_meta, $import_id) {
+function update_existing_if_empty($value, $post_id, $key, $existing_meta, $import_id) 
+{
     if ($import_id == 5) { // ENTER THE IMPORT ID HERE
         if ($key == 'ENTER-YOUR-CUSTOM-FIELD-NAME-HERE') {
             if (!isset($existing_meta[$key][0]) || empty($existing_meta[$key][0])) {
