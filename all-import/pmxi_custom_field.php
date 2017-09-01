@@ -33,6 +33,7 @@ add_filter('pmxi_custom_field', 'my_custom_field', 10, 5);
 
 /**
  * Only update the custom field if the new value is not empty
+ * This code has only been lightly tested/reviewed and is not guaranteed to be completely bug free. Backup first!
  */
 function keep_existing_if_empty($value, $post_id, $key, $existing_meta, $import_id)
 {
@@ -51,6 +52,7 @@ add_filter('pmxi_custom_field', 'keep_existing_if_empty', 10, 5);
 
 /**
  * Only update the custom field if it's currently empty
+ * This code has only been lightly tested/reviewed and is not guaranteed to be completely bug free. Backup first!
  */
 function update_existing_if_empty($value, $post_id, $key, $existing_meta, $import_id) 
 {
