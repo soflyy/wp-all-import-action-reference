@@ -16,7 +16,8 @@
  */
 function my_is_post_to_update($post_id, $data, $import_id)
 {
-    // your code here
+    // Unless you want this code to execute for every import, check the import id    
+    // if ($import_id === 5) { ... }
     return true;
 }
 
@@ -38,14 +39,17 @@ add_filter('wp_all_import_is_post_to_update', 'my_is_post_to_update', 10, 3);
  */
 function do_not_update_if_hand_modified($post_id, $data, $import_id)
 {
-    // Enter your import id here
-    if ($import_id != 1) return true;
-
-    // Check if price has been modified since last import
-    $imported_price = get_post_meta($post_id, "_last_imported_price", true);
-    if ($imported_price <= 0) return true;
-    if ($imported_price === get_post_meta($post_id, "_price", true)) return true;
-    return false;
+    // Check for your import
+    if ($import_id == 1) {
+        // Check if price has been modified since last import
+        $imported_price = get_post_meta($post_id, "_last_imported_price", true);
+        if ($imported_price <= 0) return true;
+        if ($imported_price === get_post_meta($post_id, "_price", true)) return true;
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 
 add_filter('wp_all_import_is_post_to_update', 'do_not_update_if_hand_modified', 10, 3);
