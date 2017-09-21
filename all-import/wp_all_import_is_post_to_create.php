@@ -16,7 +16,8 @@
  */
 function my_is_post_to_create($data, $import_id)
 {
-    // your code here
+    // Unless you want this code to execute for every import, check the import id
+    // if ($import_id === 5) { ... }
     return true;
 }
 
