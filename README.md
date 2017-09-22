@@ -22,7 +22,6 @@
 * [pmxi_single_category](all-import/pmxi_single_category.php) -
 * [wp_all_import_set_post_terms](all-import/wp_all_import_set_post_terms.php) - Called when WP All Import is setting the post taxonomy terms.
 
-
 ### Custom fields (post meta)
 * [pmxi_custom_field](all-import/pmxi_custom_field.php) - Custom field values can be modified *before* save using this hook.
 * [pmxi_update_post_meta](all-import/pmxi_update_post_meta.php) - Called right *after* a custom field is saved. Use this if you need access to meta_id.
@@ -38,6 +37,7 @@
 * [pmxi_attachment_uploaded](all-import/pmxi_attachment_uploaded.php) - Invoked right after an attachment was uploaded.
 * [pmxi_gallery_image](all-import/pmxi_gallery_image.php) - Invoked right after an image was imported. Usefull if working with 3rd party plugins/themes that have a custom gallery format.
 * [wp_all_import_image_filename](all-import/wp_all_import_image_filename.php) - Allows customizing the names of imported images.
+* [wp_all_import_images_uploads_dir](all-import/wp_all_import_images_uploads_dir.php) - Allows customizing the path in which media is uploaded.
 
 
 ## WP-All-Export
