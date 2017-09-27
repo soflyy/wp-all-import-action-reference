@@ -4,14 +4,14 @@
  * Filter: wp_all_import_images_uploads_dir
  * =========================================
  *
- * Can be used to set a custom path in which media is uploaded.
+ * Can be used to set a custom path in which media is uploaded. Only applies to media uploaded via WP All Import.
  *
- * @since 4.3
+ * @since 4.4.9
  *
- * @param $uploads
- * @param $articleData
- * @param $current_xml_node
- * @param $import_id
+ * @param $uploads            array - Contains information related to the WordPress uploads path & URL
+ * @param $articleData        array - Contains a list of data related to the post/user/taxonomy being imported
+ * @param $current_xml_node   array - Contains a list of nodes within the current import record
+ * @param $import_id          int   - Contains the ID of the import
  *
  * @return string
  */
