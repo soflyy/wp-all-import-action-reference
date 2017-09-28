@@ -4,7 +4,7 @@
  * Filter: wp_all_export_pre_csv_headers
  * ==================================
  *
- * Allows for CSV headers to be added.
+ * Allows for CSV headers to be added above the default headers.
  *
  * @since 1.4.8-beta-1.25
  *
