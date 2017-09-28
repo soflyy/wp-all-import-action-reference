@@ -61,6 +61,7 @@
 * [wp_all_export_is_csv_headers_enabled](all-export/wp_all_export_is_csv_headers_enabled.php) - Can be used to completely remove the CSV header.
 * [wp_all_export_export_file_name](all-export/wp_all_export_export_file_name.php) - Specify the export file name.
 * [wp_all_export_csv_headers](all-export/wp_all_export_csv_headers.php) - Manipulate export file headers.
+* [wp_all_export_pre_csv_headers](all-export/wp_all_export_pre_csv_headers.php) - Allows for CSV headers to be added above the default headers.
 
 ### Misc
 * [wp_all_export_config_options](all-export/wp_all_export_config_options.php) - Set export options
