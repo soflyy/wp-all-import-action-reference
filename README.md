@@ -39,6 +39,7 @@
 * [pmxi_gallery_image](all-import/pmxi_gallery_image.php) - Invoked right after an image was imported. Usefull if working with 3rd party plugins/themes that have a custom gallery format.
 * [wp_all_import_image_filename](all-import/wp_all_import_image_filename.php) - Allows customizing the names of imported images.
 * [wp_all_import_images_uploads_dir](all-import/wp_all_import_images_uploads_dir.php) - Allows customizing the path in which media is uploaded.
+* [wp_all_import_handle_upload](all-import/wp_all_import_handle_upload.php) - Filters the data array for attachments & images uploaded through WP All Import.
 
 
 ## WP-All-Export
