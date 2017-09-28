@@ -41,7 +41,7 @@ function export_add_one_header_row($preCsvHeaders, $exportId) {
 	
 	/**
 	 * implode() is used here to convert the array into a string, so it
-     *  can be appended to $preCsvHeaders.
+         *  can be appended to $preCsvHeaders.
 	 *
 	 * If you're not using a comma as the separator in the "Advanced Options" section
 	 *  in your export settings, change the separator that's used in implode() here.
@@ -73,8 +73,8 @@ function export_add_two_header_rows($preCsvHeaders, $exportId) {
 	);
 	
 	/**
-   * implode() is used here to convert the arrays into strings, so they
-   *  can be appended to $preCsvHeaders.
+         * implode() is used here to convert the arrays into strings, so they
+         *  can be appended to $preCsvHeaders.
 	 *
 	 * If you're not using a comma as the separator in the "Advanced Options" section
 	 *  in your export settings, change the separator that's used in implode() here.
