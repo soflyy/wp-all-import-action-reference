@@ -7,6 +7,8 @@
  *
  * Filters the data array for attachments & images uploaded through WP All Import
  *
+ * @since 4.4.9-beta-2.6
+ *
  * @param $file array - Contains the filepath, URL & filetype
  *
  * @return $file 
