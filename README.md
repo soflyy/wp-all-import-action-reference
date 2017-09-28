@@ -19,6 +19,7 @@
 * [pmxi_article_data](all-import/pmxi_article_data.php) - Allows modifying the post body content before save.
 * [pmxi_delete_post](all-import/pmxi_delete_post.php) - Triggered before posts are deleted.
 * [pmxi_product_variation_saved](all-import/pmxi_product_variation_saved.php) - Called when WP All Import saves a variable product with the "Link all variations" option selected.
+* [wp_all_import_make_product_simple](all-import/wp_all_import_make_product_simple.php) - Called after a product is converted into a Simple product by our WooCommerce Add-On, due to a lack of variations.
 * [pmxi_single_category](all-import/pmxi_single_category.php) -
 * [wp_all_import_set_post_terms](all-import/wp_all_import_set_post_terms.php) - Called when WP All Import is setting the post taxonomy terms.
 
