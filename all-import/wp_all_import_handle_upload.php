@@ -13,7 +13,7 @@
 add_filter('wp_all_import_handle_upload', 'wpai_wp_all_import_handle_upload', 10, 1);
 
 function wpai_wp_all_import_handle_upload( $file ){
-	// Code to handle $file here.
+	// Handle & return $file here.
 }
  
 // ----------------------------
