@@ -8,9 +8,10 @@
  *
  * @param $post_id int               - The id of the post just created/updated
  * @param $xml_node SimpleXMLElement - An object holding values for the current record
+ * @param $is_update		     - Boolean showing whether the post is created or updated
  *
  */
-function my_saved_post($post_id, $xml_node)
+function my_saved_post($post_id, $xml_node, $is_update)
 {
     /*
      * Here you can use standard WordPress functions like get_post_meta() and get_post() to
@@ -32,7 +33,7 @@ function my_saved_post($post_id, $xml_node)
      */
 }
 
-add_action('pmxi_saved_post', 'my_saved_post', 10, 2);
+add_action('pmxi_saved_post', 'my_saved_post', 10, 3);
 
 
 // ----------------------------
@@ -122,3 +123,14 @@ function custom_database_table_query($id)
 }
 
 
+/*
+ * Only perform an action if the post is created
+ *
+ */
+
+function soflyy_save_post( $post_id, $xml, $is_update ) {
+	if ( !$is_update ) {
+		// the post is being created, rather than updated.
+	}
+}
+add_action( 'pmxi_saved_post', 'soflyy_save_post', 10, 3 );
