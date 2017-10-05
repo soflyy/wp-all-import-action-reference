@@ -44,3 +44,21 @@ function add_title_node($node)
 }
 
 add_filter('wpallimport_xml_row', 'add_title_node', 10, 1);
+
+/**
+ * Example of converting HTML or XML embeded within a specific tag into HTML usable for import
+ *
+ */
+function parse_content($node){
+    $result = $node->xpath('//content'); // replace this with the XPath of the node
+    if (!empty($result[0])) {
+        // Optional replacements to convert custom XML tags to HTML equivalent
+		$find_xml = array('section_title','section_content','section', 'texteparagraphe','titreparagraphe');
+		$replace_html = array('h1','p','div','p','h2');
+        $html = str_replace($find_xml, $replace_html, $result[0]->asXML());
+        $node->addChild('content_html', $html);
+    }
+    return $node;
+}
+
+add_filter('wpallimport_xml_row', 'parse_content', 10, 1);
