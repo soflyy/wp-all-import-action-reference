@@ -53,8 +53,8 @@ function parse_content($node){
     $result = $node->xpath('//content'); // replace this with the XPath of the node
     if (!empty($result[0])) {
         // Optional replacements to convert custom XML tags to HTML equivalent
-		$find_xml = array('section_title','section_content','section', 'texteparagraphe','titreparagraphe');
-		$replace_html = array('h1','p','div','p','h2');
+        $find_xml = array('section_title','section_content','section', 'texteparagraphe','titreparagraphe');
+        $replace_html = array('h1','p','div','p','h2');
         $html = str_replace($find_xml, $replace_html, $result[0]->asXML());
         $node->addChild('content_html', $html);
     }
