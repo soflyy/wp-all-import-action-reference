@@ -7,21 +7,21 @@
  * Return a boolean indicating if the existing record should be updated. For
  * new posts see "wp_all_import_is_post_to_create"
  *
- * @param $post_id int   - Post id
- * @param $data array    - An array holding values for the current record. If importing from
+ * @param $continue_import  bool    - Default value true.
+ * @param $post_id          int     - Post id
+ * @param $data             array   - An array holding values for the current record. If importing from
  *                         XML, attributes can be accessed as SimpleXMLElement objects.
- * @param $import_id int - Import id
+ * @param $import_id        int     - Import id
  * 
  * @return bool (true = update, false = skip)
  */
-function my_is_post_to_update($post_id, $data, $import_id)
-{
+function my_is_post_to_update( $continue_import, $post_id, $data, $import_id ) {
     // Unless you want this code to execute for every import, check the import id    
     // if ($import_id === 5) { ... }
     return true;
 }
 
-add_filter('wp_all_import_is_post_to_update', 'my_is_post_to_update', 10, 3);
+add_filter( 'wp_all_import_is_post_to_update', 'my_is_post_to_update', 10, 4 );
 
 
 // ----------------------------
@@ -37,8 +37,7 @@ add_filter('wp_all_import_is_post_to_update', 'my_is_post_to_update', 10, 3);
  * nothing solution. You'll need a second import if there are fields you always do want to update
  * like stock level for example.
  */
-function do_not_update_if_hand_modified($post_id, $data, $import_id)
-{
+function do_not_update_if_hand_modified( $continue_import, $post_id, $data, $import_id ) {
     // Check for your import
     if ($import_id == 1) {
         // Check if price has been modified since last import
@@ -52,4 +51,4 @@ function do_not_update_if_hand_modified($post_id, $data, $import_id)
     }
 }
 
-add_filter('wp_all_import_is_post_to_update', 'do_not_update_if_hand_modified', 10, 3);
+add_filter( 'wp_all_import_is_post_to_update', 'do_not_update_if_hand_modified', 10, 4 );
