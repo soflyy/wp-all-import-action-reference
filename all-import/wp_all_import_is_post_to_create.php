@@ -8,20 +8,22 @@
  * this is only for new posts. The "wp_all_import_is_post_to_update"
  * filter is for updating existing posts
  *
- * @param $data       array - An array holding values for the current record. If importing from
+ * @param $continue_import	bool - Default value true.
+ * @param $data       		array - An array holding values for the current record. If importing from
  *                            XML, attributes can be accessed as SimpleXMLElement objects.
- * @param $import_id  int   - Import id. It can be used to make the code limited to a specific import only. 
+ * @param $import_id  		int   - Import id. It can be used to make the code limited to a specific import only.
+ *  
  *
  * @return bool (true = create, false = skip)
  */
-function my_is_post_to_create($data, $import_id)
+function my_is_post_to_create( $continue_import, $data, $import_id )
 {
     // Unless you want this code to execute for every import, check the import id
     // if ($import_id === 5) { ... }
     return true;
 }
 
-add_filter('wp_all_import_is_post_to_create', 'my_is_post_to_create', 10, 2);
+add_filter('wp_all_import_is_post_to_create', 'my_is_post_to_create', 10, 3);
 
 
 // ----------------------------
@@ -33,7 +35,7 @@ add_filter('wp_all_import_is_post_to_create', 'my_is_post_to_create', 10, 2);
  * Only allow creation of a new post if an existing custom field value
  * doesn't already exist.
  */
-function create_only_if_unique_custom_field($data, $import_id)
+function create_only_if_unique_custom_field( $continue_import, $data, $import_id )
 {
     // Check for your import
     if ($import_id == 1) {
@@ -55,7 +57,7 @@ function create_only_if_unique_custom_field($data, $import_id)
     }
 }
 
-add_filter('wp_all_import_is_post_to_create', 'create_only_if_unique_custom_field', 10, 2);
+add_filter('wp_all_import_is_post_to_create', 'create_only_if_unique_custom_field', 10, 3);
 
 
 
