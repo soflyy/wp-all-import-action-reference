@@ -67,6 +67,7 @@
 ### Misc
 * [wp_all_export_config_options](all-export/wp_all_export_config_options.php) - Set export options
 * [wp_all_export_product_variation_mode](all-export/wp_all_export_product_variation_mode.php) - Choose whether to export parent products or just variations.
+* [pmxe_before_export](all-export/pmxe_before_export.php) - Perform some action before the export starts.
 * [pmxe_after_export](all-export/pmxe_after_export.php) - Perform some action after the export is complete.
 * [wp_all_export_zapier_response](all-export/wp_all_export_zapier_response.php) - 
 
