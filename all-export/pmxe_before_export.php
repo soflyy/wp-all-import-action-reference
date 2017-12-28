@@ -5,6 +5,9 @@
  * ======================================
  * Perform some action before the export starts.
  *
+ * Note: In the case of this hook, the code needs to be added elsewhere.
+ * For example, your theme's functions.php file or a plugin like "Code Snippets".
+ *
  * @param $export_id   int     - The ID of the export that's running
  *
  */
