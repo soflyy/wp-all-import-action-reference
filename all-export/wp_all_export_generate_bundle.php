@@ -1,7 +1,7 @@
 <?php
 /**
  * ======================================
- * Action: wp_all_export_generate_bundle
+ * Filter: wp_all_export_generate_bundle
  * ======================================
  * Determine whether the bundle file should be generated.
  *
