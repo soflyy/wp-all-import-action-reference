@@ -4,9 +4,7 @@
  * Filter: wp_all_import_attachments_uploads_dir
  * =========================================
  *
- * Can be used to set a custom path in which attachments are uploaded. Only applies to attachments uploaded via WP All Import.
- *
- * For importing images, please the documentation for the "wp_all_import_images_uploads_dir" filter.
+ * Can be used to set a custom path in which attachments (uploaded by the "Download & Import Attachments" field) are uploaded. Only applies to attachments uploaded via WP All Import.
  *
  * @since 4.4.9
  *
