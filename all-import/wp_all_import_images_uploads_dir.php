@@ -4,7 +4,7 @@
  * Filter: wp_all_import_images_uploads_dir
  * =========================================
  *
- * Can be used to set a custom path in which images are uploaded. Only applies to images uploaded via WP All Import.
+ * Can be used to set a custom path in which images (as well as media intended for ACF fields) are uploaded. Only applies to media uploaded via WP All Import.
  *
  * @since 4.4.9
  *
