@@ -41,7 +41,6 @@
 * [wp_all_import_image_filename](all-import/wp_all_import_image_filename.php) - Allows customizing the names of imported images.
 * [wp_all_import_images_uploads_dir](all-import/wp_all_import_images_uploads_dir.php) - Allows customizing the path in which images & ACF field uploads are uploaded.
 * [wp_all_import_attachments_uploads_dir](all-import/wp_all_import_attachments_uploads_dir.php) - Allows customizing the path in which attachments are uploaded.
-* [wp_all_import__uploads_dir](all-import/wp_all_import_images_uploads_dir.php) - Allows customizing the path in which media is uploaded.
 * [wp_all_import_handle_upload](all-import/wp_all_import_handle_upload.php) - Filters the data array for attachments & images uploaded through WP All Import.
 * [wpallimport_after_images_import](all-import/wpallimport_after_images_import.php) - Called after images are imported, but only when "Keep images currently in Media Library" is enabled.
 
