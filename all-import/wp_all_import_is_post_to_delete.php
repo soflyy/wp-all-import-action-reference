@@ -62,3 +62,18 @@ function is_post_to_delete_orphans($to_delete, $pid, $import)
 }
 
 add_filter('wp_all_import_is_post_to_delete', 'is_post_to_delete_orphans', 11, 3);
+
+/**
+ * Example: Send posts to trash, instead of deleting them
+ *
+ */
+
+function import_send_removed_to_trash($is_post_to_delete, $pid, $import) {
+	wp_update_post(
+		array(
+			'ID'    =>  $pid,
+			'post_status'   =>  'trash'
+		)
+	);
+}
+add_filter('wp_all_import_is_post_to_delete', 'import_send_removed_to_trash', 10, 3);
