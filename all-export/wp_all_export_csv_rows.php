@@ -16,7 +16,7 @@
 function wp_all_export_csv_rows($articles, $options, $export_id)
 {
     // Unless you want this code to execute for every export, be sure to check the export id
-    // if ($export_id === 5) { ...
+    // if ($export_id == 5) { ...
 
     // Loop through the array and unset() any entries you don't want exported
     // foreach ($articles as $key => $article) {
