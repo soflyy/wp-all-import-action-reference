@@ -21,3 +21,17 @@ function wpae_pmxe_exported_post($post_id, $exportObject)
 }
 
 add_action('pmxe_exported_post', 'wpae_pmxe_exported_post', 10, 2);
+
+/**
+ *  Example that checks the export ID
+ */
+function wpae_pmxe_exported_post($post_id, $exportObject)
+{
+	$export_id = ( isset( $_GET['id'] ) ? $_GET['id'] : ( isset( $_GET['export_id'] ) ? $_GET['export_id'] : 'new' ) );
+	
+	if ($export_id == "1") {
+		$order = new WC_Order($post_id);
+		$order->update_status('completed', 'export_completed'); 
+	}
+}
+add_action('pmxe_exported_post', 'wpae_pmxe_exported_post', 10, 2);
