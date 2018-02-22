@@ -23,7 +23,7 @@ function wpae_pmxe_exported_post($post_id, $exportObject)
 add_action('pmxe_exported_post', 'wpae_pmxe_exported_post', 10, 2);
 
 /**
- *  Example that checks the export ID
+ * Example that checks the export ID
  */
 function wpae_pmxe_exported_post($post_id, $exportObject)
 {
