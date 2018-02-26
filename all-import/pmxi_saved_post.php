@@ -29,7 +29,15 @@ function my_saved_post($post_id, $xml_node, $is_update)
      * used to iterators and/or xpath syntax. It's usually easiest to convert it a nested array using:
      *
      *     $record = json_decode(json_encode((array) $xml_node), 1);
-     *
+     */
+
+    /*
+     * You can also conditionally run your code based on the import ID:
+     * 
+     *     $import_id = ( isset( $_GET['id'] ) ? $_GET['id'] : ( isset( $_GET['import_id'] ) ? $_GET['import_id'] : 'new' ) );
+     *     if ( $import_id == '8' ) {
+     *        // run code
+     *     }
      */
 }
 
