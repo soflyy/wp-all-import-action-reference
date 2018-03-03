@@ -11,7 +11,7 @@
  * @param $options
  * @param $export_id int - The export in progress
  *
- * @return array - the records to import
+ * @return array - the records to export
  */
 function wp_all_export_csv_rows($articles, $options, $export_id)
 {
@@ -23,7 +23,7 @@ function wp_all_export_csv_rows($articles, $options, $export_id)
     //    if ($article["Title"] == "Something") unset($articles[$key]);
     // }
 
-    return $articles; // Return the array of records to import
+    return $articles; // Return the array of records to export
 }
 
 add_filter('wp_all_export_csv_rows', 'wp_all_export_csv_rows', 10, 3);
