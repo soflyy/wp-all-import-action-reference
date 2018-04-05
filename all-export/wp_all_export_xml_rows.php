@@ -18,7 +18,7 @@ function my_wp_all_export_xml_rows($is_export_record, $record, $export_options, 
 {
     // Unless you want this code to execute for every export, be sure to check the export id
     //
-    // if ($export_id === 5) { ...
+    // if ($export_id == 5) { ...
 
     // Check $record object and return true to export or false to skip
 
