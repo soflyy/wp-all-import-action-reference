@@ -28,7 +28,7 @@ add_action('pmxe_after_export', 'wp_all_export_after_export', 10, 2);
  * Gets the export file once the export is complete
  */
 
-add_action('pmxe_after_export', 'wpae_after_export', 10, 2);
+add_action('pmxe_after_export', 'wpae_get_file_after_export', 10, 2);
 function wpae_get_file_after_export($export_id, $exportObj){
 	
 	// Check whether "Secure Mode" is enabled in All Export -> Settings
