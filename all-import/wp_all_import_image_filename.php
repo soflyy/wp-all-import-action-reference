@@ -64,4 +64,4 @@ function image_name_from_hash($filename, $img_title, $img_caption, $img_alt, $ar
     return $filename;
 }
 
-add_filter('wp_all_import_image_filename', 'image_name_from_alt', 10, 5);
+add_filter('wp_all_import_image_filename', 'image_name_from_hash', 10, 5);
