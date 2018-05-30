@@ -17,7 +17,7 @@
 function my_pmxi_article_data($articleData, $import, $post_to_update)
 {
     // Add new content to the top of old content
-    // $articleData['post_content'] .= $post_to_update->post_content;;
+    // $articleData['post_content'] .= $post_to_update->post_content;
 
     return $articleData;
 }
