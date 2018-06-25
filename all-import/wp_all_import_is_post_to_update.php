@@ -52,3 +52,28 @@ function do_not_update_if_hand_modified( $continue_import, $post_id, $data, $imp
 }
 
 add_filter( 'wp_all_import_is_post_to_update', 'do_not_update_if_hand_modified', 10, 4 );
+
+
+/**
+ * This function will only update the post if the stock status in the import file is different
+ * to the stock status saved for the product.
+ * $data["stock"] is the {stock[1]} element from the import file.
+ */
+function my_check_stock_before_update ( $continue_import, $post_id, $data, $import_id ) {
+    // Check for your import
+    if ($import_id == 1) {
+		// Get import file stock status
+        $import_stock_status = $data["stock"];
+		// get Woo stock status
+		$woo_stock_status = get_post_meta($post_id, "_stock_status", true);
+		// Check if my_stock_status and woo_stock_status match
+        if ($import_stock_status !== $woo_stock_status) {
+			return true;
+		}
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+add_filter( 'wp_all_import_is_post_to_update', 'my_check_stock_before_update', 10, 4 );
