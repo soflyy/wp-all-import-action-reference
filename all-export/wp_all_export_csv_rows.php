@@ -20,7 +20,9 @@ function wp_all_export_csv_rows($articles, $options, $export_id)
 
     // Loop through the array and unset() any entries you don't want exported
     // foreach ($articles as $key => $article) {
-    //    if ($article["Title"] == "Something") unset($articles[$key]);
+    //    if ($article["Title"] == "Something") {
+    //      unset($articles[$key]);
+    //  }
     // }
 
     return $articles; // Return the array of records to export
@@ -51,3 +53,22 @@ function my_export_csv_rows($articles, $options, $export_id)
 }
 
 add_filter('wp_all_export_csv_rows', 'my_export_csv_rows', 10, 3);
+
+
+/**
+ * Export based on date in the "_my_time" field
+ *
+ */
+function wp_all_export_csv_rows($articles, $options, $export_id)
+{
+    // Loop through the array and unset() any entries you don't want exported
+     foreach ($articles as $key => $article) {
+	   $date = date(strtotime("tomorrow"));
+	   $my_time = strtotime($article["_my_time"]);
+        if ($my_time < $date) {
+		  unset($articles[$key]);
+		}
+     }
+    return $articles; // Return the array of records to export
+}
+add_filter('wp_all_export_csv_rows', 'wp_all_export_csv_rows', 10, 3);
