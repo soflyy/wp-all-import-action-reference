@@ -1,7 +1,7 @@
 <?php
 /**
  * =============================================
- * Action: wp_all_import_get_image_from_gallery
+ * Filter: wp_all_import_get_image_from_gallery
  * =============================================
  *
  * Called after an existing image is found in the Media Library. Only works with the "Use images currently in Media Library" and "Use images currently uploaded in wp-content/uploads/wpallimport/files/" options.
