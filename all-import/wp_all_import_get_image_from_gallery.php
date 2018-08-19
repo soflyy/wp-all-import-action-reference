@@ -7,7 +7,7 @@
  * Called after an existing image is found in the Media Library. Only works with the "Use images currently in Media Library" and "Use images currently uploaded in wp-content/uploads/wpallimport/files/" options.
  *
  * @param $attach object                    - The existing image object that will be attached.
- * @param $image_name string array          - The image name that will be imported.
+ * @param $image_name string                - The image name that will be imported.
  * @param $targetDir                        - The directory that the image will be uploaded to.
  *
  */
