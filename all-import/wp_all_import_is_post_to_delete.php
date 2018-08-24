@@ -19,7 +19,7 @@ function my_is_post_to_delete($is_post_to_delete, $post_id, $import)
     return true;
 }
 
-add_filter('wp_all_import_is_post_to_delete', 'my_is_post_to_delete', 10, 2);
+add_filter('wp_all_import_is_post_to_delete', 'my_is_post_to_delete', 10, 3);
 
 
 // ----------------------------
