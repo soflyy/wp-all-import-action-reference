@@ -26,6 +26,7 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 * [wp_all_import_make_product_simple](all-import/wp_all_import_make_product_simple.php) - Called after a product is converted into a Simple product by our WooCommerce Add-On, due to a lack of variations.
 * [pmxi_single_category](all-import/pmxi_single_category.php) -
 * [wp_all_import_set_post_terms](all-import/wp_all_import_set_post_terms.php) - Called when WP All Import is setting the post taxonomy terms.
+* [wp_all_import_multi_glue](all-import/wp_all_import_multi_glue.php) - Change the delimiter that's used when querying multiple values with XPath.
 
 ### Custom fields (post meta)
 * [pmxi_custom_field](all-import/pmxi_custom_field.php) - Custom field values can be modified *before* save using this hook.
