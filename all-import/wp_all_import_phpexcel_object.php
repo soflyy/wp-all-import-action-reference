@@ -4,7 +4,7 @@
  * Filter: wp_all_import_phpexcel_object
  * =======================================
  *
- * Access/modify the import PHPExcel object
+ * Access/modify the PHPExcel object and file path for the import file.
  *
  *
  * @param $PHPExcel object      - The PHPExcel object.

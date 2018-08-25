@@ -49,6 +49,7 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 * [wp_all_import_handle_upload](all-import/wp_all_import_handle_upload.php) - Filters the data array for attachments & images uploaded through WP All Import.
 * [wpallimport_after_images_import](all-import/wpallimport_after_images_import.php) - Called after images are imported, but only when "Keep images currently in Media Library" is enabled.
 * [wp_all_import_get_image_from_gallery](all-import/wp_all_import_get_image_from_gallery.php) - Called after an existing image is found in the Media Library. Doesn't work with "Download images hosted elsewhere".
+* [wp_all_import_search_image_by_wp_attached_file](all-import/wp_all_import_search_image_by_wp_attached_file.php) - Can be used to stop WP All Import from looking for existing images via _wp_attached_file.
 
 
 ## WP-All-Export
