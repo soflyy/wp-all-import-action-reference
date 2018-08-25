@@ -82,4 +82,5 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 * [pmxe_after_export](all-export/pmxe_after_export.php) - Perform some action after the export is complete.
 * [wp_all_export_generate_bundle](all-export/wp_all_export_generate_bundle.php) - Determine whether the bundle file should be generated.
 * [wp_all_export_zapier_response](all-export/wp_all_export_zapier_response.php) -
-* [wp_all_export_use_csv_compliant_line_endings](all-export/wp_all_export_use_csv_compliant_line_endings.php) - Use custom CSV writer when affected by https://bugs.php.net/bug.php?id=43225. 
+* [wp_all_export_use_csv_compliant_line_endings](all-export/wp_all_export_use_csv_compliant_line_endings.php) - Use custom CSV writer when affected by https://bugs.php.net/bug.php?id=43225.
+* [pmxe_after_iteration](all-export/pmxe_after_iteration.php) - Runs after each cron processing iteration finishes.
