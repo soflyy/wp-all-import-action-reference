@@ -71,6 +71,9 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 ### WooCommerce
 * [wp_all_export_raw_prices](all-export/wp_all_export_raw_prices.php) - Can be used to disable price formatting for WooCommerce exports.
 
+### ACF
+* [wp_all_export_repeater_delimiter](all-export/wp_all_export_repeater_delimiter.php) - Define the delimiter used for ACF Repeater fields.
+
 ### Misc
 * [wp_all_export_config_options](all-export/wp_all_export_config_options.php) - Set export options
 * [wp_all_export_product_variation_mode](all-export/wp_all_export_product_variation_mode.php) - Choose whether to export parent products or just variations.
