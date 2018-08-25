@@ -12,6 +12,7 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 * [wp_all_import_is_check_duplicates](all-import/wp_all_import_is_check_duplicates.php) - Turn duplicate checking on/off.
 * [wp_all_import_is_unlink_missing_posts](all-import/wp_all_import_is_unlink_missing_posts.php) - Used to completely remove the relationship between import and post from pmxi_posts database table.
 * [wp_all_import_skip_x_csv_rows](all-import/wp_all_import_skip_x_csv_rows.php) - Specifies the amount of rows to be skipped.
+* [wp_all_import_curl_download_only](all-import/wp_all_import_curl_download_only.php) - Force WP All Import to download the feed on the first request.
 
 ### Modifying post data during import
 * [wpallimport_xml_row](all-import/wpallimport_xml_row.php) - Allows modification of each data record from the file before import.
