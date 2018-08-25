@@ -45,6 +45,7 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 * [wp_all_import_attachments_uploads_dir](all-import/wp_all_import_attachments_uploads_dir.php) - Allows customizing the path in which attachments are uploaded.
 * [wp_all_import_handle_upload](all-import/wp_all_import_handle_upload.php) - Filters the data array for attachments & images uploaded through WP All Import.
 * [wpallimport_after_images_import](all-import/wpallimport_after_images_import.php) - Called after images are imported, but only when "Keep images currently in Media Library" is enabled.
+* [wp_all_import_get_image_from_gallery](all-import/wp_all_import_get_image_from_gallery.php) - Called after an existing image is found in the Media Library. Doesn't work with "Download images hosted elsewhere".
 
 
 ## WP-All-Export
@@ -67,11 +68,14 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 * [wp_all_export_csv_headers](all-export/wp_all_export_csv_headers.php) - Manipulate export file headers.
 * [wp_all_export_pre_csv_headers](all-export/wp_all_export_pre_csv_headers.php) - Allows for CSV headers to be added above the default headers.
 
+### WooCommerce
+* [wp_all_export_raw_prices](all-export/wp_all_export_raw_prices.php) - Can be used to disable price formatting for WooCommerce exports.
+
 ### Misc
 * [wp_all_export_config_options](all-export/wp_all_export_config_options.php) - Set export options
 * [wp_all_export_product_variation_mode](all-export/wp_all_export_product_variation_mode.php) - Choose whether to export parent products or just variations.
 * [pmxe_before_export](all-export/pmxe_before_export.php) - Perform some action before the export starts.
 * [pmxe_after_export](all-export/pmxe_after_export.php) - Perform some action after the export is complete.
 * [wp_all_export_generate_bundle](all-export/wp_all_export_generate_bundle.php) - Determine whether the bundle file should be generated.
-* [wp_all_export_zapier_response](all-export/wp_all_export_zapier_response.php) - 
-
+* [wp_all_export_zapier_response](all-export/wp_all_export_zapier_response.php) -
+* [wp_all_export_use_csv_compliant_line_endings](all-export/wp_all_export_use_csv_compliant_line_endings.php) - Use custom CSV writer when affected by https://bugs.php.net/bug.php?id=43225. 
