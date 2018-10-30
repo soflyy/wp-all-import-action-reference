@@ -17,3 +17,16 @@
 }
 
 add_action( 'wpallimport_after_images_import', 'soflyy_img_import', 10, 3 );
+
+
+/**
+ * Delete images that have been unattached from the post
+ */
+
+function soflyy_img_import( $post_id, $gallery_attachment_ids, $missing_images ) {
+	foreach ( $missing_images as $image ) {
+        	wp_delete_attachment( $image );
+        }
+}
+
+add_action( 'wpallimport_after_images_import', 'soflyy_img_import', 10, 3 );
