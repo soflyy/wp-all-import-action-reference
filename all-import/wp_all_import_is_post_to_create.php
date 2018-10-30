@@ -60,4 +60,21 @@ function create_only_if_unique_custom_field( $continue_import, $data, $import_id
 add_filter('wp_all_import_is_post_to_create', 'create_only_if_unique_custom_field', 10, 3);
 
 
-
+/**
+ * Compare a date from your import file to a date specified within the function
+ * and only import posts if they are newer than the specified date
+ */
+function my_is_post_to_create( $continue_import, $data, $import_id ) {
+    if ( $import_id == 3 ) { // Change this to the ID of your import
+        $date_in_file = strtotime( $data['column_4'] ); // Change this to the column name
+	$date = "2018-10-10"; // Change this to the date you want to import records from
+        $current_date = strtotime($date);
+        if ( $date_in_file >= $current_date ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
+add_filter('wp_all_import_is_post_to_create', 'my_is_post_to_create', 10, 3);
