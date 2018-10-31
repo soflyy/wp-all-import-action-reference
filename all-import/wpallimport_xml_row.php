@@ -66,3 +66,29 @@ function parse_content($node){
 }
 
 add_filter('wpallimport_xml_row', 'parse_content', 10, 1);
+
+
+/**
+ * Example getting the tag names "Commerciale" or "Residenziale" when they
+ * don't contain any data. These can be called from the import using
+ * {TYPE[1]}
+ */
+function add_property_type($node) {
+    // Selects Commerciale in file
+    $commerciale = $node->xpath('//Commerciale[1]');
+    // If Commerciale exists add <TYPE>Commerciale</TYPE> to entry
+    if (!empty($commerciale[0])) {
+        $node->addChild('TYPE', 'Commerciale');
+    };
+       
+	// Selects Residenziale in file
+	$residenziale = $node->xpath('//Residenziale[1]');
+	// If Residenziale exists add <TYPE>Residenziale</TYPE> to entry
+    if (!empty($residenziale[0])) {
+        $node->addChild('TYPE', 'Residenziale');
+    };
+       
+    return $node;
+};
+
+add_filter('wpallimport_xml_row', 'add_property_type', 10, 1);
