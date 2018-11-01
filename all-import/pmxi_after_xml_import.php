@@ -41,3 +41,19 @@ function email_results( $import_id ) {
 }
 
 add_action( 'pmxi_after_xml_import', 'email_results', 10, 1 );
+
+
+/**
+* Delete import file once the import completes
+*
+*/
+function wp_all_import_after_xml_import( $import_id ) {
+    $import = new PMXI_Import_Record();
+    $import->getById( $import_id );
+    if ( ! $import->isEmpty() ) {
+    	$path = wp_all_import_get_absolute_path( $import->path );
+    	@unlink( $path );
+    }
+}
+
+add_action( 'pmxi_after_xml_import', 'wp_all_import_after_xml_import', 10, 1 );
