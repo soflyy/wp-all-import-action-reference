@@ -77,3 +77,25 @@ function my_check_stock_before_update ( $continue_import, $post_id, $data, $impo
     }
 }
 add_filter( 'wp_all_import_is_post_to_update', 'my_check_stock_before_update', 10, 4 );
+
+
+/**
+ * Only update posts where the post_status = "draft"
+ * 
+ */
+function my_check_post_status ($continue_import, $post_id, $data, $import_id ) {
+    // Check for your import
+    if ($import_id == 1) {
+	// Get post status
+	$my_post_status = get_post_status($post_id);
+	// Only update posts where the status = "draft"
+        if ($my_post_status == "draft") {
+		return true;
+	}
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+add_filter( 'wp_all_import_is_post_to_update', 'my_check_post_status', 10, 4 );
