@@ -45,3 +45,17 @@ function wpai_wp_all_import_variable_product_imported( $post_parent ){
         }
     }   
 }
+
+/**
+ * Example: Copy the featured image to the product gallery.
+ *
+ */
+add_action('wp_all_import_variable_product_imported', 'copy_featured_img_to_gallery', 10, 1);
+
+function copy_featured_img_to_gallery($post_id)
+{	
+	$gallery = explode(",",get_post_meta($post_id, "_product_image_gallery", true));	
+	array_unshift($gallery, get_post_thumbnail_id( $post_id ));
+	$gallery = array_unique($gallery);	
+	update_post_meta($post_id, "_product_image_gallery", implode(",",$gallery));
+}
