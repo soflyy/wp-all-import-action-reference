@@ -102,6 +102,8 @@ add_action('pmxi_saved_post', 'conditional_delete', 10, 1);
 /*
  * In some cases it's desirable to have the featured image also appear in the product
  * gallery in WooCommerce. This function will prepend the featured image to the gallery.
+ * For later versions of WP All Import, see:
+ * https://github.com/soflyy/wp-all-import-action-reference/blob/master/all-import/wp_all_import_variable_product_imported.php
  */
 function copy_featured_img_to_gallery($post_id)
 {
