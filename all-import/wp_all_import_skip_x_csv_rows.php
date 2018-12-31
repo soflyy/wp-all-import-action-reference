@@ -6,10 +6,9 @@
  *
  * Specifies the amount of rows to be skipped.
  * 
- * **********************************************************
- * NOTE: This code will not work in WPAI's Function Editor, *
- * or in a plugin like Code Snippets.                       *
- * **********************************************************
+ * NOTE: This code will not work in WPAI's Function Editor.
+ * You must save it in your child themes function.php file
+ * or in a plugin like Code Snippets.  
  *
  * @since 4.4.4-beta-2.3
  *
