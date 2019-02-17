@@ -2,6 +2,8 @@
 
 This GitHub repo serves as documentation for WP All Import and WP All Export's actions. For support, questions, concerns, or anything else, please submit a support request: http://www.wpallimport.com/support/
 
+#### __Note: Check "Issues" for latest undocumented hooks.__
+
 ## WP-All-Import
 
 ### Before and after import
