@@ -144,3 +144,17 @@ function soflyy_save_post( $post_id, $xml, $is_update ) {
 	}
 }
 add_action( 'pmxi_saved_post', 'soflyy_save_post', 10, 3 );
+
+
+/*
+ * Add a new stock value to an existing stock value
+ *
+ */
+function my_add_stock($post_id) {
+    $new_stock = get_post_meta($post_id, "_new_stock", true);
+    $current_stock = get_post_meta($post_id, "_stock", true);
+    $all_stock = ($new_stock + $current_stock);
+    update_post_meta($post_id, "_stock", $all_stock);
+    delete_post_meta($post_id, "_new_stock");
+}
+add_action('pmxi_saved_post', 'my_add_stock', 10, 1);
