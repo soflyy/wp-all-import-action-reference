@@ -72,3 +72,30 @@ function wp_all_export_csv_rows($articles, $options, $export_id)
     return $articles; // Return the array of records to export
 }
 add_filter('wp_all_export_csv_rows', 'wp_all_export_csv_rows', 10, 3);
+
+
+/*
+* Export all posts from the previous calendar month
+*
+*/
+function wp_all_export_csv_rows($articles, $options, $export_id) {
+	// Get start date of previous month
+	$start_date = date("Y-m-d", strtotime("first day of previous month"));
+	// Get end date of previous month
+	$end_date = date("Y-m-d", strtotime("last day of previous month"));	
+	// Loop through the array and unset() any entries you don't want exported
+     	foreach ($articles as $key => $article) {
+		// Get post date from export data
+		$post_date = $article["_my_post_date"];
+		// Compare the dates
+        	if ( ( $post_date >= $start_date ) && ( $post_date <= $end_date ) ) {
+			// Don't unset the $articles
+		} else {
+			// Unset the $articles
+			unset($articles[$key]);
+		}
+	}
+	// Return the array of records to export
+    	return $articles;
+}
+add_filter('wp_all_export_csv_rows', 'wp_all_export_csv_rows', 10, 3);
