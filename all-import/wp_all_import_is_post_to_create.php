@@ -78,3 +78,26 @@ function my_is_post_to_create( $continue_import, $data, $import_id ) {
     return true;
 }
 add_filter('wp_all_import_is_post_to_create', 'my_is_post_to_create', 10, 3);
+
+
+/**
+* Check if a product SKU already exists on the site.
+* If it does, skip importing the record.
+*/
+function my_is_post_to_create( $continue_import, $data, $import_id ) {
+	// Get the SKU from the import file
+	$sku = $data['sku']; // Change this to the column name that contains your SKU
+    
+	global $wpdb;
+    	// Check if the SKU already exists
+	$product_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key='_sku' AND meta_value='%s' LIMIT 1", $sku ) );
+	
+    	if ( $product_id ) {
+		// If product ID exists then skip importing
+		return false;
+	} else {
+		// Else, import the product
+		return true;
+	}
+}
+add_filter('wp_all_import_is_post_to_create', 'my_is_post_to_create', 10, 3);
