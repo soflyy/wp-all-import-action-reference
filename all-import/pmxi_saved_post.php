@@ -158,3 +158,27 @@ function my_add_stock($post_id) {
     delete_post_meta($post_id, "_new_stock");
 }
 add_action('pmxi_saved_post', 'my_add_stock', 10, 1);
+
+
+/*
+* Import prices to product variations using an import file that
+* contains the parent SKU and the price only. The parent price
+* needs to be added to a custom field called "_parent_price".
+*/
+function my_set_price($post_id) {
+    // Get the parent price
+    $parent_price = get_post_meta($post_id, "_parent_price", true);
+    // Get the parent
+    $parent = new WC_Product_Variable($post_id);
+    // Get the variations
+    $variations = $parent->get_children();
+    // Loop through the variations and set the price
+    foreach ($variations as $variation) {
+        $single_variation = new WC_Product_Variation($variation);
+	$variation_id = $single_variation->get_variation_id();
+	update_post_meta($variation_id, "_price", $parent_price);
+	update_post_meta($variation_id, "_regular_price", $parent_price);
+	}
+    delete_post_meta($post_id, "_parent_price");
+}
+add_action('pmxi_saved_post', 'my_set_price', 10, 1);
