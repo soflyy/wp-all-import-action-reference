@@ -8,10 +8,10 @@
  *
  * This filter works only when 'Choose which data to update' options is chosen in import settings.
  *
- * @param $articleData          array  - TODO: Verify ... New content is in $articleData['post_content']
- * @param $import               object - TODO: Verify
- * @param $post_to_update       object - Current content is in $post_to_update->post_content
- * @param $current_xml_node     object - Current XML node
+ * @param $articleData    array  - TODO: Verify ... New content is in $articleData['post_content']
+ * @param $import         object - TODO: Verify
+ * @param $post_to_update object - Current content is in $post_to_update->post_content
+ * @param $current_xml_node array - Parsed data of current XML node
  *
  * @return mixed
  */

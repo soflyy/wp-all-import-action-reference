@@ -9,6 +9,7 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 ### Before and after import
 * [pmxi_before_xml_import](all-import/pmxi_before_xml_import.php) - Executed just before the import begins.
 * [pmxi_after_xml_import](all-import/pmxi_after_xml_import.php) - Executed when the entire import completes.
+* [pmxi_before_delete_post](all-import/pmxi_before_delete_post.php) - This fires just before a post is deleted.
 * [wp_all_import_auto_create_csv_headers](all-import/wp_all_import_auto_create_csv_headers.php) - Auto generate headers, or use header in file.
 * [wp_all_import_feed_type](all-import/wp_all_import_feed_type.php) - Can be used to define the feed type.
 * [wp_all_import_is_check_duplicates](all-import/wp_all_import_is_check_duplicates.php) - Turn duplicate checking on/off.
@@ -19,17 +20,16 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 ### Modifying post data during import
 * [wpallimport_xml_row](all-import/wpallimport_xml_row.php) - Allows modification of each data record from the file before import.
 * [pmxi_saved_post](all-import/pmxi_saved_post.php) - Invoked right after saving a post.
-* [wp_all_import_variable_product_imported](all-import/wp_all_import_variable_product_imported.php) - Called when WP All Import saves a variable product.
-* [wp_all_import_variation_taxonomies](all-import/wp_all_import_variation_taxonomies.php) - Can be used to add taxonomies to WooCommerce product variations.
 * [pmxi_after_post_import](all-import/pmxi_after_post_import.php) - Invoked after saving a post (??)
 * [pmxi_article_data](all-import/pmxi_article_data.php) - Allows modifying the post body content before save.
 * [pmxi_delete_post](all-import/pmxi_delete_post.php) - Triggered before posts are deleted.
-* [pmxi_product_variation_saved](all-import/pmxi_product_variation_saved.php) - Called when WP All Import saves a variable product with the "Link all variations" option selected.
-* [wp_all_import_make_product_simple](all-import/wp_all_import_make_product_simple.php) - Called after a product is converted into a Simple product by our WooCommerce Add-On, due to a lack of variations.
 * [pmxi_single_category](all-import/pmxi_single_category.php) -
 * [wp_all_import_set_post_terms](all-import/wp_all_import_set_post_terms.php) - Called when WP All Import is setting the post taxonomy terms.
 * [wp_all_import_multi_glue](all-import/wp_all_import_multi_glue.php) - Change the delimiter that's used when querying multiple values with XPath.
 * [wp_all_import_phpexcel_object](all-import/wp_all_import_phpexcel_object) - Access/modify the import PHPExcel object.
+* [wp_all_import_use_wp_set_object_terms](all-import/wp_all_import_use_wp_set_object_terms.php) - Determines behavior of assigment taxonomy term to a post.
+* [wp_all_import_copy_uploaded_file_into_files_folder](all-import/wp_all_import_copy_uploaded_file_into_files_folder.php) - In case of TRUE value WP All Import will copy uploaded XML files into /wp-content/uploads/wpallimport/files folder.
+* [wp_all_import_is_php_allowed](all-import/wp_all_import_is_php_allowed.php) - In case of TRUE value WP All Import will execute PHP functions in import template, e.q.: ```[str_replace("a", "b", {title[1]})]```.
 
 ### Custom fields (post meta)
 * [pmxi_custom_field](all-import/pmxi_custom_field.php) - Custom field values can be modified *before* save using this hook.
@@ -53,6 +53,15 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 * [wp_all_import_get_image_from_gallery](all-import/wp_all_import_get_image_from_gallery.php) - Called after an existing image is found in the Media Library. Doesn't work with "Download images hosted elsewhere".
 * [wp_all_import_search_image_by_wp_attached_file](all-import/wp_all_import_search_image_by_wp_attached_file.php) - Can be used to stop WP All Import from looking for existing images via _wp_attached_file.
 
+
+## WooCommerce Add-On
+* [pmxi_product_variation_saved](woocommerce-add-on/pmxi_product_variation_saved.php) - Called when WP All Import saves a variable product with the "Link all variations" option selected.
+* [wp_all_import_get_prices_from_first_variation](woocommerce-add-on/wp_all_import_get_prices_from_first_variation.php) - Can be used to set price from first variation and set it to parent product in case when variable product converting to simple.
+* [wp_all_import_variation_any_attribute](woocommerce-add-on/wp_all_import_variation_any_attribute.php) - Can be used to set variation attributes to 'Any' value.
+* [wp_all_import_product_attributes_delimiter](woocommerce-add-on/wp_all_import_product_attributes_delimiter.php) - Can be used to set product attributes delimiter.
+* [wp_all_import_variation_taxonomies](woocommerce-add-on/wp_all_import_variation_taxonomies.php) - Can be used to add taxonomies to WooCommerce product variations.
+* [wp_all_import_variable_product_imported](woocommerce-add-on/wp_all_import_variable_product_imported.php) - Called when WP All Import saves a variable product.
+* [wp_all_import_make_product_simple](woocommerce-add-on/wp_all_import_make_product_simple.php) - Called after a product is converted into a Simple product by our WooCommerce Add-On, due to a lack of variations.
 
 ## WP-All-Export
 
