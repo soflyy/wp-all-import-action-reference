@@ -23,4 +23,4 @@ function my_pmxi_article_data($articleData, $import, $post_to_update, $current_x
     return $articleData;
 }
 
-add_filter('pmxi_article_data', 'my_pmxi_article_data', 10, 3);
+add_filter('pmxi_article_data', 'my_pmxi_article_data', 10, 4);
