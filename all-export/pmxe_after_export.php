@@ -42,3 +42,30 @@ function wpae_get_file_after_export($export_id, $exportObj){
 	// Code to handle $filepath here
 	// e.g., rename( $filepath, "/path/to/new/folder/export-file-name.csv" );
 }
+
+/**
+ * Move export file to /wp-content/uploads once the export is complete
+ */
+
+add_action('pmxe_after_export', 'wpae_move_export_file_to_root_upload_folder', 10, 2);
+
+function wpae_move_export_file_to_root_upload_folder ($export_id, $exportObj){
+	
+	// Get WordPress's upload directory information
+	$upload_dir = wp_get_upload_dir();
+	
+	// Check whether "Secure Mode" is enabled in All Export -> Settings
+	$is_secure_export = PMXE_Plugin::getInstance()->getOption('secure');
+	
+	if (!$is_secure_export) {
+		$filepath = get_attached_file($exportObj->attch_id);                    
+	} else {
+		$filepath = wp_all_export_get_absolute_path($exportObj->options['filepath']);
+	}
+	
+	// Get the filename
+	$filename = basename( $filepath );
+	
+	// Code to move export file into /wp-content/uploads
+	rename( $filepath,  $upload_dir['basedir'] . DIRECTORY_SEPARATOR . $filename );
+}
