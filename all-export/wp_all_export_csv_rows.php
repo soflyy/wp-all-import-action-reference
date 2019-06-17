@@ -99,3 +99,32 @@ function wp_all_export_csv_rows($articles, $options, $export_id) {
     	return $articles;
 }
 add_filter('wp_all_export_csv_rows', 'wp_all_export_csv_rows', 10, 3);
+
+/*
+* Exclude variations from Google Merchant Center export when the parent product is in "Draft" status
+*
+*/
+
+function my_exclude_drafts_from_gmc_export($articles, $options, $export_id) {
+	
+	if ($options["xml_template_type"] == "XmlGoogleMerchants") {
+
+		foreach ($articles as $key => $article) {
+			if ( ! empty($article['id']) ) {
+
+				$post_id = $article['id'];
+
+				$parent_id = wp_get_post_parent_id($post_id);
+
+				if ( get_post_status($parent_id) == "draft" ) {
+					unset($articles[$key]);
+				}
+
+			}
+		}
+
+	}
+	
+    return $articles;
+}
+add_filter('wp_all_export_csv_rows', 'my_exclude_drafts_from_gmc_export', 10, 3);
