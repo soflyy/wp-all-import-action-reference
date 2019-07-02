@@ -22,3 +22,21 @@ function wpai_wp_all_import_attachments_uploads_dir($uploads, $articleData, $cur
 	return $uploads;
 
 }
+
+/**
+ * Upload attachments to /woocommerce_uploads folder
+ *
+ */
+
+function wpai_attachments_uploaded_to_woocommerce_uploads($uploads, $articleData, $current_xml_node, $import_id) {
+
+	$uploads['path'] = $uploads['basedir'] . '/woocommerce_uploads';
+	$uploads['url'] = $uploads['baseurl'] . '/woocommerce_uploads';
+	
+	if (!file_exists($uploads['path'])) {
+		mkdir($uploads['path'], 0755, true);
+	}
+
+	return $uploads;
+}
+add_filter('wp_all_import_attachments_uploads_dir', 'wpai_attachments_uploaded_to_woocommerce_uploads', 10, 4);
