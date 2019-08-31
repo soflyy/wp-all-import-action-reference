@@ -9,14 +9,15 @@
  * For hooks to execute after a post is saved see pmxi_after_post_import & pmxi_saved_post
  *
  * @param $import_id int - The import in progress
+ * @param $import        - The import object
  */
-function after_xml_import($import_id)
+function after_xml_import($import_id, $import)
 {
     // Unless you want this code to execute for every import, check the import id
     // if ($import_id == 5) { ... }
 }
 
-add_action('pmxi_after_xml_import', 'after_xml_import', 10, 1);
+add_action('pmxi_after_xml_import', 'after_xml_import', 10, 2);
 
 // ----------------------------
 // Example uses below
