@@ -36,7 +36,7 @@ add_action('pmxi_gallery_image', 'my_gallery_image', 10, 3);
  * );
  *
  */
-function gallery_id_url($post_id, $att_id, $filepath, $is_keep_existing_images)
+function gallery_id_url($post_id, $att_id, $filepath, $is_keep_existing_images = '')
 {
     $key = '_gallery';  // Edit this: Set meta key for gallery array here
     $size = 'full';     // Edit this: Set WordPress image size for the URL here (e.g. "full" or "thumb")
@@ -65,7 +65,7 @@ add_action('pmxi_gallery_image', 'gallery_id_url', 10, 4);
  * );
  *
  */
-function gallery_n_id($post_id, $att_id, $filepath, $is_keep_existing_images)
+function gallery_n_id($post_id, $att_id, $filepath, $is_keep_existing_images = '')
 {
     $key = '_gallery';  // Edit this: Set meta key for gallery array here
 
@@ -87,7 +87,7 @@ add_action('pmxi_gallery_image', 'gallery_n_id', 10, 4);
  * For image galleries where each image id is saved as an individual post meta value with the same key (ie. No arrays)
  *
  */
-function gallery_meta_id($post_id, $att_id, $filepath, $is_keep_existing_images)
+function gallery_meta_id($post_id, $att_id, $filepath, $is_keep_existing_images = '')
 {
     $key = '_gallery'; // Edit this: Set meta key for gallery array here
 
@@ -109,7 +109,7 @@ add_action('pmxi_gallery_image', 'gallery_meta_id', 10, 4);
  * "23,25,31"
  *
  */
-function gallery_ids_in_string($post_id, $att_id, $filepath, $is_keep_existing_images)
+function gallery_ids_in_string($post_id, $att_id, $filepath, $is_keep_existing_images = '')
 {
     $key = '_gallery'; // Edit this: Set meta key for gallery array here
     $separator = ",";
