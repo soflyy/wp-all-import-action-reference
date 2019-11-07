@@ -16,4 +16,4 @@ function wpai_wp_all_import_variation_any_attribute($variation_any_attribute, $i
     return $variation_any_attribute;
 }
 
-add_filter('wp_all_import_variation_any_attribute', 'wpai_wp_all_import_variation_any_attribute', 10, 1);
+add_filter('wp_all_import_variation_any_attribute', 'wpai_wp_all_import_variation_any_attribute', 10, 2);
