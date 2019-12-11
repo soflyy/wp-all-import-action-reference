@@ -26,7 +26,7 @@ This GitHub repo serves as documentation for WP All Import and WP All Export's a
 * [pmxi_single_category](all-import/pmxi_single_category.php) -
 * [wp_all_import_set_post_terms](all-import/wp_all_import_set_post_terms.php) - Called when WP All Import is setting the post taxonomy terms.
 * [wp_all_import_multi_glue](all-import/wp_all_import_multi_glue.php) - Change the delimiter that's used when querying multiple values with XPath.
-* [wp_all_import_phpexcel_object](all-import/wp_all_import_phpexcel_object) - Access/modify the import PHPExcel object.
+* [wp_all_import_phpexcel_object](all-import/wp_all_import_phpexcel_object.php) - Access/modify the import PHPExcel object.
 * [wp_all_import_use_wp_set_object_terms](all-import/wp_all_import_use_wp_set_object_terms.php) - Determines behavior of assigment taxonomy term to a post.
 * [wp_all_import_copy_uploaded_file_into_files_folder](all-import/wp_all_import_copy_uploaded_file_into_files_folder.php) - In case of TRUE value WP All Import will copy uploaded XML files into /wp-content/uploads/wpallimport/files folder.
 * [wp_all_import_is_php_allowed](all-import/wp_all_import_is_php_allowed.php) - In case of TRUE value WP All Import will execute PHP functions in import template, e.q.: ```[str_replace("a", "b", {title[1]})]```.
