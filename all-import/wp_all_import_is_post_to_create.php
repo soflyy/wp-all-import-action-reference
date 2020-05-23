@@ -19,7 +19,7 @@
 function my_is_post_to_create( $continue_import, $data, $import_id )
 {
     // Unless you want this code to execute for every import, check the import id
-    // if ($import_id === 5) { ... }
+    // if ($import_id == 5) { ... }
     return true;
 }
 
