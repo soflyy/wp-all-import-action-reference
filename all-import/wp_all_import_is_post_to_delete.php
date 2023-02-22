@@ -15,7 +15,7 @@
 function my_is_post_to_delete($is_post_to_delete, $post_id, $import)
 {
     // Unless you want this code to execute for every import, check the import id    
-    // if ($import->id === 5) { ... }
+    // if ((int) $import->id === 5) { ... }
     return true;
 }
 
